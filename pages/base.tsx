@@ -1,34 +1,59 @@
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import usePizzaStore from '../utils/store/pizza-store';
+import { baseContainerVariants, NextVariant } from '../utils/variants';
+
 
 const Base = () => {
   const [addBase, pizza] = usePizzaStore((state) => [state.addBase, state.pizza])
   const bases = ['Classic', 'Thin & Crispy', 'Thick Crust'];
 
   return (
-    <div className="base container">
+    <motion.div
+      variants={baseContainerVariants}
+      initial='initial'
+      animate='fixed'
+      className="base container">
 
       <h3>Step 1: Choose Your Base</h3>
       <ul>
         {bases.map(base => {
           let spanClass = pizza.base === base ? 'active' : '';
           return (
-            <li key={base} onClick={() => addBase(base)}>
+            <motion.li key={base} onClick={() => addBase(base)}
+              whileHover={{
+                scale: 1.3,
+                color: '#f8e112',
+                originX: 0,
+              }}
+              transition={{
+                type: 'spring',
+                stiffness: 300
+              }}
+            >
               <span className={spanClass}>{base}</span>
-            </li>
+            </motion.li>
           )
         })}
       </ul>
 
       {pizza.base && (
-        <div className="next">
+        <motion.div className="next"
+          variants={NextVariant}
+        >
           <Link href="/toppings">
-            <button>Next</button>
+            <motion.button
+              whileHover={{
+                scale: 1.1,
+                textShadow: '0px 0px 8px rgb(255,255,255)',
+                boxShadow: '0px 0px 8px rgb(255,255,255)',
+              }}
+            >Next</motion.button>
           </Link>
-        </div>
+        </motion.div>
       )}
 
-    </div>
+    </motion.div>
   )
 }
 
