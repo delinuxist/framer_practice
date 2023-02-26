@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import usePizzaStore from '../utils/store/pizza-store';
-import { toppingsContainerVariants } from '../utils/variants';
+import { buttonVariants, toppingsContainerVariants } from '../utils/variants';
 
 
 const Toppings = () => {
@@ -40,11 +40,8 @@ const Toppings = () => {
 
       <Link href="/order">
         <motion.button
-          whileHover={{
-            scale: 1.1,
-            textShadow: '0px 0px 8px rgb(255,255,255)',
-            boxShadow: '0px 0px 8px rgb(255,255,255)',
-          }}
+          variants={buttonVariants}
+          whileHover={'hover'}
         >
           Order
         </motion.button>
