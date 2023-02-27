@@ -22,6 +22,9 @@ export const orderChildVariants = {
   },
   fixed: {
     opacity: 1,
+    transition: {
+      duration: 0.2
+    }
   }
 }
 

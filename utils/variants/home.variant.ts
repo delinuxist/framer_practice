@@ -1,4 +1,6 @@
-export const homeContainerVariant = {
+import { Variants } from 'framer-motion';
+
+export const homeContainerVariant: Variants = {
   initial: {
     opacity: 0
   },
