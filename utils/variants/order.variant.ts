@@ -1,4 +1,6 @@
-export const orderContainerVariants = {
+import { Variants } from 'framer-motion'
+
+export const orderContainerVariants: Variants = {
   initial: {
     opacity: 0,
     x: '100vw',
@@ -16,7 +18,7 @@ export const orderContainerVariants = {
   }
 }
 
-export const orderChildVariants = {
+export const orderChildVariants: Variants = {
   initial: {
     opacity: 0,
   },

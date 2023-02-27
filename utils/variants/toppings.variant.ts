@@ -1,4 +1,6 @@
-export const toppingsContainerVariants = {
+import { Variants } from 'framer-motion';
+
+export const toppingsContainerVariants: Variants = {
   initial: {
     opacity: 0,
     x: '100vw',

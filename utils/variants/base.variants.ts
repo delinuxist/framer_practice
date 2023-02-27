@@ -1,4 +1,6 @@
-export const baseContainerVariants = {
+import { Variants } from 'framer-motion';
+
+export const baseContainerVariants: Variants = {
   initial: {
     opacity: 0,
     x: '100vw',
